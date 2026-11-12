@@ -1,48 +1,36 @@
-# Chemistry 360 — MVP prototype
+# Chemistry 360 – Learning Library v1
 
-A responsive, installable web app prototype for Chemistry 360.
+A free, static, mobile-friendly Chemistry learning library for Ugandan secondary learners (S1–S6).
 
-## Included
-- Responsive homepage and navigation
-- Six starter Chemistry lessons
-- Lesson comprehension checks
-- Five-question interactive quiz
-- Local learning progress (saved in the browser)
-- Premium membership preview (demo only)
-- Creator/admin preview (not secured)
-- PWA manifest, service worker and app icon
+## Included in this first release
+- Class filters for S1, S2, S3, S4, S5 and S6
+- One starter lesson for each class
+- Learning outcomes, explanatory notes and worked applications
+- Original schematic diagrams
+- Topic-specific YouTube search links for supplementary video learning (these are search links, not individually reviewed videos)
+- Two interactive comprehension questions per lesson with instant feedback
+- Local lesson-completion tracking on the learner's device
+- Basic PWA manifest and offline cache
+
+## Publish on GitHub Pages
+1. Download and extract the project ZIP.
+2. Open your existing Chemistry 360 GitHub repository.
+3. Upload/replace `index.html`, `manifest.json`, `service-worker.js`, `icon.svg`, and `README.md` in the repository root.
+4. Commit the changes to your `main` branch.
+5. Open the published GitHub Pages website and refresh. If an old version remains, wait a few minutes and refresh; the service worker may cache the previous version.
+
+## Important limitations
+- This is a front-end learning library. Progress is stored only in the current browser/device using localStorage; it does not sync between devices.
+- There are no student accounts, teacher dashboard, cloud database, protected paid content or payment processing.
+- Video links open YouTube search results rather than a selected/endorsed video.
+- This is a starter set of six sample lessons, not complete S1–S6 syllabus coverage. Review content against the current NCDC/UNEB requirements before formal use or sale.
+- Chemistry practicals must be performed only under qualified teacher supervision and with appropriate safety controls.
 
 ## Run locally
-The simplest option is to use a static web server:
-1. Extract the ZIP.
-2. Open a terminal in this folder.
-3. Run `python -m http.server 8000`
-4. Open `http://localhost:8000` in your browser.
+Open `index.html` in a browser for a basic preview. For PWA/service-worker testing, serve the folder over localhost, for example:
 
-Opening `index.html` directly also works for the main website, but PWA installation/offline caching requires HTTPS or localhost.
+```bash
+python -m http.server 8000
+```
 
-## Publish online
-1. Create a GitHub account and a new repository, e.g. `chemistry360`.
-2. Upload `index.html`, `manifest.json`, `service-worker.js`, and `icon.svg`.
-3. In repository Settings → Pages, enable deployment from the main branch and root folder.
-4. Wait for the published HTTPS URL, then open it on your phone.
-5. In Chrome on Android, use the browser menu → Install app or Add to Home screen (wording may vary).
-
-Alternative: upload the extracted files to a static hosting provider that supports HTTPS.
-
-## Important before commercial launch
-This is a front-end MVP prototype, not a production commerce platform. It does NOT include:
-- Secure registration/login or server-side user accounts
-- A real database or cloud sync
-- Real Mobile Money/card payment processing
-- Protected premium content
-- Secure administrator authentication
-- Production analytics, backups or customer support workflows
-
-Do not collect customer information or accept payments through this prototype. Before charging customers, add a secure backend, database, authentication, payment provider integration, privacy policy, terms, refund policy and content review process. Test payment flows in the provider's sandbox first.
-
-## Suggested next production stack
-- Frontend: this responsive PWA
-- Backend/database/authentication: Supabase or Firebase
-- Payments: a supported Ugandan payment gateway / Mobile Money aggregator, subject to merchant onboarding and current fees
-- Android: launch the PWA first; later package it as a Trusted Web Activity or build a native app if there is a clear need.
+Then visit `http://localhost:8000`.

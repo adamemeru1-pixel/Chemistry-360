@@ -1,17 +1,10 @@
 {
   "name": "Chemistry 360",
   "short_name": "Chemistry 360",
-  "description": "Understand Chemistry. Understand Life.",
+  "description": "Interactive Chemistry learning for Ugandan secondary students, S1–S6.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f4f7fa",
+  "background_color": "#f3f7fa",
   "theme_color": "#10253b",
-  "icons": [
-    {
-      "src": "icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ]
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
 }
